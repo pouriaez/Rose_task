@@ -1,12 +1,268 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
+    font-size: 10px;
+    scroll-behavior: smooth;
 }
-.container{
+
+.container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#toggle {
+    display: none;
+}
+
+/**
+  Hamburger
+**/
+.hamburger {
+    position: absolute;
+    top: 5em;
+    right: 5%;
+    margin-left: -2em;
+    margin-top: -45px;
+    width: 2em;
+    height: 45px;
+    z-index: 5;
+}
+
+.hamburger div {
+    position: relative;
+    width: 3em;
+    height: 2px;
+    border-radius: 3px;
+    background-color: #23476B;
+    margin-top: 8px;
+    transition: all 0.3s ease-in-out;
+}
+
+/**
+Nav Styles
+**/
+.nav {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #F7F8F9;
+    top: -100%; left: 0; right: 0; bottom: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    transform: scale(0);
+}
+.nav-wrapper {
+    position: relative;
+    overflow: hidden;
+    overflow-y: auto;
+    height: 100%;
+}
+nav {
+    text-align: left;
+    margin-left: 25%;
+}
+nav a {
+    position: relative;
+    text-decoration: none;
+    color: #6ecddd;
+    font-size: 2em;
+    display: inline-block;
+    margin-top: 1.25em;
+    transition: color 0.2s ease-in-out;
+    letter-spacing: 1px;
+}
+nav a:before {
+    content: '';
+    height: 0;
+    position: absolute;
+    width: 0.25em;
+    background-color: white;
+    left: -0.5em;
+    transition: all 0.2s ease-in-out;
+}
+nav a:hover {
+    color: white;
+}
+nav a:hover:before {
+    height: 100%;
+}
+
+/**
+Animations
+**/
+#toggle:checked + .hamburger .top-bun {
+    transform: rotate(-45deg);
+    margin-top: 25px;
+}
+#toggle:checked + .hamburger .bottom-bun {
+    opacity: 0;
+    transform: rotate(45deg);
+}
+#toggle:checked + .hamburger .meat {
+    transform: rotate(45deg);
+    margin-top: -7px;
+}
+
+#toggle:checked + .hamburger + .nav {
+    top: 0;
+    transform: scale(1);
+}
+
+
+
+
+
+.head {
+    padding: 35px 20px;
+}
+
+.head-rose {
+    font-size: 1.8rem;
+}
+
+
+.text-box {
+    background-color: #F7F8F9;
+    padding: 40px 40px;
 
 }
-.head{
-    background-color: #F5F5F7;
+
+.text1 {
+    color: #23476B;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.7rem;
+}
+
+.text2 {
+    color: #8193A5;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+}
+
+.image1 {
+    position: relative;
+    /*width: 50%;*/
+}
+
+.image1 img {
+    width: 100%;
+    display: block;
+    height: auto;
+    padding-top: 8px;
+}
+
+.image1-hover {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #0000EE;
+    color: white;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    cursor: pointer;
+}
+
+.image1:hover .image1-hover {
+    opacity: 70%;
+
+}
+
+.image1-text1 {
+    padding-bottom: 10px;
+    font-style: italic;
+    font-size: 1.6rem;
+}
+
+.image1-text2 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.footer {
+    padding: 40px 20px;
+
+}
+
+.footer-icon {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+}
+
+.circle-icon {
+    background: #E5E9EE;
+    padding: 20px;
+    border-radius: 50%;
+}
+
+.footer-text {
+    text-align: center;
+    color: #9AA9B7;
+    font-size: 1.2rem;
+}
+
+.footer-text a {
+    text-decoration: none;
+    color: #9AA9B7;
+    font-size: 1.2rem;
+}
+
+
+@media (min-width: 900px) {
+
+    body {
+        scroll-behavior: smooth;
+    }
+
+
+    .top {
+        position: fixed;
+        bottom: 30px;
+        float: right;
+        right: 18.5%;
+        left: 94.25%;
+        max-width: 30px;
+        width: 100%;
+        background-color: #E5E9EE;
+        padding: 20px;
+        border-radius: 4px;
+
+    }
+    .top:hover{
+        cursor: pointer;
+        background-color:#9AA9B7;
+        transition: .5s ease;
+    }
+
+    .arrow-icon {
+        width: 20px;
+        height: 20px;
+
+    }
+
+}
+
+@media (min-width: 600px) {
+
 }
